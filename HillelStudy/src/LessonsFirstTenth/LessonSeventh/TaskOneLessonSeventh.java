@@ -1,12 +1,14 @@
 package LessonsFirstTenth.LessonSeventh;
 
-import java.util.Random;
-
 /**
  * @author Butko Hanna
  */
 
-public class TaskOneLessonSeventh extends NewClass {
+//Написать свой новый класс (или классы), которые можно использовать в рассмотренной
+// на прошлом занятии задаче про игральные карты для покера.
+// Внедрить эти классы и переписать программу с ними.
+
+public class TaskOneLessonSeventh extends ShuffleClass {
     public static void main(String[] args) {
         //Task 4. Program that is supposed to simulate the distribution of cards for playing poker
 
@@ -18,10 +20,10 @@ public class TaskOneLessonSeventh extends NewClass {
 
         String[] deck = new String[noCards];
 
-        NewClass shuffle = new NewClass();
-        shuffle.Shuffle(deck, suites, values, noCards);
+        ShuffleClass shuffle = new ShuffleClass();
+        shuffle.shuffle(deck, suites, values, noCards);
 
-        resultPrint print = new resultPrint();
+        ResultPrint print = new ResultPrint();
         print.result();
 
         int count = 0;
@@ -34,7 +36,3 @@ public class TaskOneLessonSeventh extends NewClass {
         }
     }
 }
-
-//Написать свой новый класс (или классы), которые можно использовать в рассмотренной
-// на прошлом занятии задаче про игральные карты для покера.
-// Внедрить эти классы и переписать программу с ними.

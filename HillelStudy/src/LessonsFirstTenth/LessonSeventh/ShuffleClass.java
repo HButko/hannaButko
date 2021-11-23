@@ -2,8 +2,8 @@ package LessonsFirstTenth.LessonSeventh;
 
 import java.util.Random;
 
-public class NewClass {
-    public void Shuffle(String[] deck, String[] suites, String[] values, int noCards){
+public class ShuffleClass {
+    public void shuffle(String[] deck, String[] suites, String[] values, int noCards){
 
         int count = 0;
         for (String suite : suites) {
