@@ -4,7 +4,7 @@ package LessonsFirstTenth.LessonEighth;
  * @author Butko Hanna
  */
 
-class FormulasCalculator {
+class Calculator {
 
     //P=C=2πr=πd
     public double calculate(double diameter) {
@@ -25,5 +25,22 @@ class FormulasCalculator {
         int calcResult;
         calcResult = 4 * side;
         return calcResult;
+    }
+
+    //P=2L+2W
+    public int calculate(int length, int width) {
+        int calcResult;
+        calcResult = 2 * length + 2 * width;
+        return calcResult;
+    }
+
+    public void thanks() {
+        System.out.println("Thanks for calculating!");
+    }
+}
+
+class Thanks extends Calculator {
+    public void thanks() {
+        super.thanks();
     }
 }
