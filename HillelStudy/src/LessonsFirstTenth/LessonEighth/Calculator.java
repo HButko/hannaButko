@@ -4,7 +4,7 @@ package LessonsFirstTenth.LessonEighth;
  * @author Butko Hanna
  */
 
-class Calculator {
+public class Calculator {
 
     //P=C=2πr=πd
     public double calculate(double diameter) {
