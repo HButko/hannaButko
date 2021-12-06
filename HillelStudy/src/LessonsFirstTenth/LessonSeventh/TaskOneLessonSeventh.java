@@ -1,15 +1,18 @@
 package LessonsFirstTenth.LessonSeventh;
 
+import LessonsFirstTenth.LessonTenth.ErrorException;
+
 /**
  * @author Butko Hanna
  */
 
-//Написать свой новый класс (или классы), которые можно использовать в рассмотренной
-// на прошлом занятии задаче про игральные карты для покера.
-// Внедрить эти классы и переписать программу с ними.
+//В нашей программе для покер машины есть потенциальные места, где могут возникать ошибки,
+// а также такие, где можно выбросить свои исключения.
+//Задача заключается в обнаружении таких мест, написании и внедрении своих исключений,
+// а также их обработка в вызывающем методе.
 
 public class TaskOneLessonSeventh extends ShuffleClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ErrorException {
         //Task 4. Program that is supposed to simulate the distribution of cards for playing poker
 
         int noCards = 52;
@@ -27,12 +30,18 @@ public class TaskOneLessonSeventh extends ShuffleClass {
         print.result();
 
         int count = 0;
-        for (int round = 1; round < 6; round++) {
-            System.out.printf("%d round ", round);
-            for (int player = 1; player < players; player++) {
-                System.out.printf("Player %d gets %s ", player, deck[count++]);
+        try {
+            for (int round = 1; round < 6; round++) {
+                System.out.printf("%d round: ", round);
+                for (int player = 1; player < players; player++) {
+                    System.out.printf("Player %d gets %s, ", player, deck[count++]);
+                }
+                System.out.println("");
             }
-            System.out.println("");
+        } catch (ErrorException errorException) {
+            throw new ErrorException("Wrong round calculation");
+        } finally {
+            System.out.println("The 'try-catch' is finished!");
         }
     }
 }
