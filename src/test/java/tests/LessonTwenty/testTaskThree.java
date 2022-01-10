@@ -20,8 +20,8 @@ public class testTaskThree {
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/geolocation");
 
-        WebElement searchButton = driver.findElement(By.xpath("//button"));
-        searchButton.click();
+        WebElement button = driver.findElement(By.xpath("//button"));
+        button.click();
 
         Thread.sleep(1000);
 
