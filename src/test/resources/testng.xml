@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Group1" verbose="1">
+    <suite-files>
+        <suite-file path="login2.xml"/>
+        <suite-file path="login1.xml"/>
+    </suite-files>
+</suite>
