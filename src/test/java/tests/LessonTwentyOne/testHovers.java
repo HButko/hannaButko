@@ -32,10 +32,15 @@ public class testHovers {
         List<WebElement> userAvatar = driver.findElements(By.cssSelector("div.figure"));
 //        WebElement userName = driver.findElement(By.cssSelector("div.figcaption"));
 
-        userAvatar.forEach(webElement -> {
-            actions.moveToElement(webElement).perform();
-            System.out.print(driver.findElement(By.tagName("h5")).getText());
-        });
+        for (int i = 0; i<userAvatar.size(); i++) {
+            actions.moveToElement(userAvatar.get(i)).perform();
+            System.out.print(driver.findElements(By.cssSelector("div.figure h5")).get(i).getText());
+        }
+
+//        userAvatar.forEach(webElement -> {
+//            actions.moveToElement(webElement).perform();
+//            System.out.print(driver.findElement(By.cssSelector("div.figure")).getText());
+//        });
 
 
 
