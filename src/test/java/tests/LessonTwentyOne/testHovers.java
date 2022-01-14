@@ -10,7 +10,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 //https://the-internet.herokuapp.com/hovers - написать тест,
@@ -30,60 +29,12 @@ public class testHovers {
         driver.get("https://the-internet.herokuapp.com/hovers");
         Actions actions = new Actions(driver);
         List<WebElement> userAvatar = driver.findElements(By.cssSelector("div.figure"));
-//        WebElement userName = driver.findElement(By.cssSelector("div.figcaption"));
 
-        for (int i = 0; i<userAvatar.size(); i++) {
+        for (int i = 0; i < userAvatar.size(); i++) {
             actions.moveToElement(userAvatar.get(i)).perform();
             System.out.print(driver.findElements(By.cssSelector("div.figure h5")).get(i).getText());
         }
-
-//        userAvatar.forEach(webElement -> {
-//            actions.moveToElement(webElement).perform();
-//            System.out.print(driver.findElement(By.cssSelector("div.figure")).getText());
-//        });
-
-
-
-//        List<String> names = Arrays.asList(userName.getText());
-
-
-
-//        List<WebElement> title = userName.findElements(By.cssSelector("users"));
-//        title.forEach(name -> {
-//            System.out.println(name.findElement(By.tagName("h5")).getText());
-//        });
-
-//        int i = 0;
-//        for (String element : names) {
-//            System.out.printf("\n User number: " + i + " and User " + element);
-//            i++;
-//        }
     }
-
-//    @Test
-//    public void hoversTest() {
-//        driver.get("https://the-internet.herokuapp.com/hovers");
-//
-//        WebElement userAvatar = driver.findElement(By.cssSelector("div.figure"));
-//        WebElement userName = driver.findElement(By.cssSelector("div.figcaption"));
-//
-//        Actions actions = new Actions(driver);
-//
-//        List<String> names = Arrays.asList(userName.getText());
-//
-//        actions.moveToElement(userAvatar).perform();
-//
-////        List<WebElement> title = userName.findElements(By.cssSelector("users"));
-////        title.forEach(name -> {
-////            System.out.println(name.findElement(By.tagName("h5")).getText());
-////        });
-//
-//        int i = 0;
-//        for (String element : names) {
-//            System.out.printf("\n User number: " + i + " and User " + element);
-//            i++;
-//        }
-//    }
 
     @AfterTest(alwaysRun = true)
     private void afterTest() {
