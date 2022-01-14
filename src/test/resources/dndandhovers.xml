@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="test_suite1">
+    <test name="testDrugAndDrop">
+        <classes>
+            <class name="tests.LessonTwentyOne.testDrugAndDrop"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="testHoverMenu">
+        <classes>
+            <class name="tests.LessonTwentyOne.testHoverMenu"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="testHovers">
+        <classes>
+            <class name="tests.LessonTwentyOne.testHovers"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
