@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -27,6 +29,8 @@ public class testDrugAndDrop {
     @Test
     public void drugAndDropTest() {
         driver.get("https://crossbrowsertesting.github.io/drag-and-drop.html");
+        WebDriverWait driverWait = new WebDriverWait(driver, 5);
+        driverWait.until(ExpectedConditions.titleContains("Drag and Drop example"));
 
         WebElement item = driver.findElement(By.id("draggable"));
         WebElement place = driver.findElement(By.id("droppable"));

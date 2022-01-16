@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -24,8 +26,9 @@ public class testHoverMenu {
     }
 
     @Test
-    public void hoverMenuTest() throws InterruptedException {
+    public void hoverMenuTest() {
         driver.get("https://crossbrowsertesting.github.io/hover-menu.html");
+        WebDriverWait driverWait = new WebDriverWait(driver, 5);
 
         WebElement dropdownMenu = driver.findElement(By.xpath("//a[@class='dropdown-toggle' and contains(text(), 'Dropdown')]"));
         WebElement secondaryMenu = driver.findElement(By.xpath("//a[@class='dropdown-toggle' and contains(text(), 'Secondary Menu')]"));
@@ -35,10 +38,12 @@ public class testHoverMenu {
         Actions actions = new Actions(driver);
 
         actions.click(dropdownMenu).perform();
-        Thread.sleep(1000);
+        driverWait.until(ExpectedConditions.elementToBeClickable(By
+                .xpath("//a[@class='dropdown-toggle' and contains(text(), 'Secondary Menu')]")));
 
         actions.click(secondaryMenu).perform();
-        Thread.sleep(1000);
+        driverWait.until(ExpectedConditions.elementToBeClickable(By
+                .xpath("//a[contains (text(), 'Secondary Action')]")));
 
         actions.click(secondaryAction).perform();
 
