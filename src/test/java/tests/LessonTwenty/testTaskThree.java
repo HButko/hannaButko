@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 
 public class testTaskThree {
     private WebDriver driver;
-    private WebDriverWait driverWait;
 
     @BeforeTest
     private void beforeTest() {
@@ -29,7 +28,7 @@ public class testTaskThree {
     @Test
     public void locationLocatorTest() {
         driver.get("https://the-internet.herokuapp.com/geolocation");
-        driverWait = new WebDriverWait(driver, 5);
+        WebDriverWait driverWait = new WebDriverWait(driver, 5);
 
         WebElement button = driver.findElement(By.xpath("//button"));
         button.click();
