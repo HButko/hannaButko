@@ -1,11 +1,10 @@
 package tests.LessonTwenty;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pageObjects.TablePage;
+import tests.BaseTest;
 
 import java.util.List;
 
@@ -14,33 +13,22 @@ import java.util.List;
 // Уточнение: число внизу, которое меняется по клику, отрисовывается динамически, его достать нельзя,
 // потому не нужно проверять что оно изменилось после клика
 
-public class testTaskOne {
+public class testTaskOne extends BaseTest {
 
     @Test
-    private void tableLocatorTest() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://the-internet.herokuapp.com/challenging_dom");
+    public void tableLocatorTest() {
+        TablePage tablePage = openApp().goToTablePage();
+        tablePage.blueButton();
+        tablePage.redButton();
+        tablePage.greenButton();
 
-        WebElement button = driver.findElement(By.cssSelector(".button[class='button']"));
-        button.click();
+        System.out.printf("\n Column header: " + tablePage.tableTitle());
 
-        WebElement buttonAlert = driver.findElement(By.cssSelector(".button[class='button alert']"));
-        buttonAlert.click();
-
-        WebElement buttonSuccess = driver.findElement(By.cssSelector(".button[class='button success']"));
-        buttonSuccess.click();
-
-        WebElement tableColumnHeader = driver.findElement(By.cssSelector("table tr th:nth-child(4)"));
-        System.out.printf("\n Column header: " + tableColumnHeader.getText());
-
-        List<WebElement> tableColumnElements = driver.findElements(By.cssSelector("tr td:nth-child(4)"));
+        List<WebElement> tableColumnElements = webDriver.findElements(By.cssSelector("tr td:nth-child(4)"));
         int i = 0;
         for (WebElement element : tableColumnElements) {
             System.out.printf("\n Cell number:  " + i + " and cell value: " + element.getText());
             i++;
         }
-
-        driver.quit();
     }
 }
