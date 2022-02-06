@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,8 +18,7 @@ public class TablePage extends BasePage {
     @FindBy(css = "table tr th:nth-child(4)")
     private WebElement tableHeader;
 
-    public TablePage(WebDriver webDriver) {
-        super(webDriver);
+    public TablePage() {
         PageFactory.initElements(webDriver, this);
     }
 

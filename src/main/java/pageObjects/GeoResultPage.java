@@ -1,7 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,8 +16,7 @@ public class GeoResultPage extends BasePage {
     @FindBy(xpath = "//div[@id='long-value']")
     private WebElement findLong;
 
-    public GeoResultPage(WebDriver webDriver) {
-        super(webDriver);
+    public GeoResultPage() {
         PageFactory.initElements(webDriver, this);
     }
 

@@ -1,6 +1,6 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,8 +13,7 @@ public class SecurePage extends BasePage {
     @FindBy(css = ".button.secondary.radius")
     private WebElement logoutButton;
 
-    public SecurePage(WebDriver webDriver) {
-        super(webDriver);
+    public SecurePage() {
         PageFactory.initElements(webDriver, this);
     }
 
@@ -24,6 +23,6 @@ public class SecurePage extends BasePage {
 
     public LoginPage logout() {
         this.logoutButton.click();
-        return new LoginPage(webDriver);
+        return new LoginPage();
     }
 }

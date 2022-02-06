@@ -14,8 +14,7 @@ public class HoversPage extends BasePage {
     @FindBy(css = "div.figure h5")
     private WebElement userName;
 
-    public HoversPage(WebDriver webDriver) {
-        super(webDriver);
+    public HoversPage() {
         PageFactory.initElements(webDriver, this);
     }
 
