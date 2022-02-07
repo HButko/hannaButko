@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,8 +18,7 @@ public class LoginPage extends BasePage {
     @FindBy(css = "div#flash.flash.error")
     private WebElement errorMessage;
 
-    public LoginPage(WebDriver webDriver) {
-        super(webDriver);
+    public LoginPage() {
         PageFactory.initElements(webDriver, this);
     }
 
@@ -36,12 +34,12 @@ public class LoginPage extends BasePage {
 
     public SecurePage loginButton() {
         loginButton.click();
-        return new SecurePage(webDriver);
+        return new SecurePage();
     }
 
     public LoginPage loginButtonClick() {
         loginButton.click();
-        return new LoginPage(webDriver);
+        return new LoginPage();
     }
 
     public SecurePage login(String userName, String password) {
