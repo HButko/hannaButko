@@ -1,7 +1,6 @@
 package tests.LessonTwentySeven;
 
 
-import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjectsSelenide.DynamicLoadingPage;
