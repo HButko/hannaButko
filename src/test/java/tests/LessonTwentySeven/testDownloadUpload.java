@@ -47,7 +47,5 @@ public class testDownloadUpload {
         uploadPage.setFileInInput(new File("target/download/1645546370716_17768_1/test.txt"));
         uploadPage.submitFileUpload();
         uploadPage.uploadVerification();
-
-        Assert.assertTrue(true, "File is not uploaded");
     }
 }

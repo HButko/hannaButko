@@ -21,6 +21,6 @@ public class UploadPage {
     }
 
     public void uploadVerification() {
-        uploadVerification.should(Condition.visible);
+        uploadVerification.should(Condition.visible).shouldBe(Condition.appear);
     }
 }
