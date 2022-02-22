@@ -2,7 +2,6 @@
 
 <suite name="Group1" verbose="1">
     <suite-files>
-        <suite-file path="login2.xml"/>
-        <suite-file path="login1.xml"/>
+        <suite-file path="selenide.xml"/>
     </suite-files>
 </suite>
