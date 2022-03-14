@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.$;
 
 public class DownloadPage {
-    private final SelenideElement textFile = $("#content > div > a:nth-child(40)");
+    private final SelenideElement textFile = $("#content > div > a:nth-child(16)");
 
     @Step("Download file")
     public void downloadFile() {

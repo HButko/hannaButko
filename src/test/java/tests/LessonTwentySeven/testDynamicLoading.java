@@ -43,6 +43,6 @@ public class testDynamicLoading {
         exampleTwo.verifyLoader();
 
         String results = String.valueOf(exampleTwo.verifyResult());
-        Assert.assertFalse(results.contains("Hello World!"), "Test is failed");
+        Assert.assertTrue(results.contains("Hello World!"), "Test is failed");
     }
 }

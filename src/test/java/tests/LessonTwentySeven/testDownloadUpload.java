@@ -34,7 +34,7 @@ public class testDownloadUpload {
 
         //Update file
         try {
-            Path path = Paths.get("target/download/1645546370716_17768_1/test.txt");
+            Path path = Paths.get("target/download/1647295909518_6036_1/some-file.txt");
             List<String> lines = Files.readAllLines(path);
             Files.write(path, lines, StandardOpenOption.APPEND);
         } catch (IOException e) {
