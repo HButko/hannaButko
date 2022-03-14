@@ -44,7 +44,7 @@ public class testDownloadUpload {
         //Upload file
         open(uploadPageLink);
         UploadPage uploadPage = new UploadPage();
-        uploadPage.setFileInInput(new File("target/download/1645546370716_17768_1/test.txt"));
+        uploadPage.setFileInInput(new File("target/download/1647295909518_6036_1/some-file.txt"));
         uploadPage.submitFileUpload();
         uploadPage.uploadVerification();
     }
