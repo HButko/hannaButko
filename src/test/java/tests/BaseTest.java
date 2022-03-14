@@ -1,9 +1,9 @@
 package tests;
 
-import com.codeborne.selenide.commands.TakeScreenshot;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -22,10 +22,17 @@ import java.nio.file.Files;
 public class BaseTest {
     protected WebDriver webDriver;
 
+    @BeforeAll
+    static void setupAllureReports() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(false)
+                .savePageSource(true)
+        );
+    }
+
     @BeforeClass
     public void setUp() {
         webDriver = DriverSingleton.getDriver();
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
     @AfterClass
