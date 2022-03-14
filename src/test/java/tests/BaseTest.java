@@ -1,7 +1,9 @@
 package tests;
 
 import com.codeborne.selenide.commands.TakeScreenshot;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +25,7 @@ public class BaseTest {
     @BeforeClass
     public void setUp() {
         webDriver = DriverSingleton.getDriver();
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 
     @AfterClass
