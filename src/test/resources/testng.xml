@@ -3,5 +3,6 @@
 <suite name="Group1" verbose="1">
     <suite-files>
         <suite-file path="selenide.xml"/>
+        <suite-file path="selenium.xml"/>
     </suite-files>
 </suite>
