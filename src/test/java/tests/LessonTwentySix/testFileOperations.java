@@ -49,7 +49,7 @@ public class testFileOperations extends BaseTest {
                 .submitButton();
 
         String verifyText = String.valueOf(uploadFile.fileUploaded());
-        Assert.assertFalse(verifyText.contains("dummy.txt"), "File is not uploaded");
+        Assert.assertTrue(verifyText.contains("dummy.txt"), "File is not uploaded");
     }
 
     private void fileDownloadWait (String fileName) {
