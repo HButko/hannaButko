@@ -2,6 +2,8 @@ package tests.LessonTwentySeven;
 
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjectsSelenide.DownloadPage;
@@ -23,6 +25,8 @@ public class testDownloadUpload {
 
     @Test
     public void testFileOperations() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+
         String downloadPageLink = "https://the-internet.herokuapp.com/download";
         String uploadPageLink = "https://the-internet.herokuapp.com/upload";
         Configuration.downloadsFolder = "target/download/";

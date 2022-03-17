@@ -1,6 +1,8 @@
 package tests.LessonTwentySeven;
 
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjectsSelenide.DynamicLoadingPage;
@@ -16,6 +18,8 @@ public class testDynamicLoading {
 
     @Test
     public void testDynamicLoadExampleOne() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+
         String dynLoadPageLink = "https://the-internet.herokuapp.com/dynamic_loading";
         open(dynLoadPageLink);
         DynamicLoadingPage loadingPage = new DynamicLoadingPage();
@@ -32,6 +36,8 @@ public class testDynamicLoading {
 
     @Test
     public void testDynamicLoadExampleTwo() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
+
         String dynLoadPageLink = "https://the-internet.herokuapp.com/dynamic_loading";
         open(dynLoadPageLink);
         DynamicLoadingPage loadingPage = new DynamicLoadingPage();
